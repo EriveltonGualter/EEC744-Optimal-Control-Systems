@@ -1,0 +1,314 @@
+\documentclass{article}
+%
+% Demo of the mcode package from 
+% http://www.mathworks.co.uk/matlabcentral/fileexchange/8015-m-code-latex-package
+% Updated 06 Mar 2014
+%
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\graphicspath{ {images/} }
+
+% load package with ``framed'' and ``numbered'' option.
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+% something NOT relevant to the usage of the package.
+\usepackage{url}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{18pt}
+
+
+% //////////////////////////////////////////////////
+
+\begin{document}
+
+\title{Homework 2 - Optimal Control Systems}
+\author{Erivelton Gualter dos Santos, 2703806}
+\date{}
+
+\maketitle 
+
+\begin{enumerate}[]
+\item \textbf{Suppose that Q is a non-symmetric matrix, S is the symmetric part of Q, and x is an arbitrary vector. Prove the following:}
+$$ x^T Q x = x^T S x $$
+\end{enumerate}
+
+As the symetric part of Q is : $ S = \frac{1}{2}(Q+Q^T) $, So:
+\begin{eqnarray*}
+\begin{split}
+	x^T S x &= x^T \frac{1}{2}(Q+Q^T) x \\
+	&= x^T \frac{1}{2}(Q+Q^T) x \\
+	&= \frac{1}{2}(x^TQ+x^TQ^T) x \\
+	&= \frac{1}{2}(x^TQx+x^TQ^Tx) \\
+\end{split}
+\end{eqnarray*}
+Knowing that: $x^TQx=x^TQ^Tx$, So $x^T S x $ = $ \frac{1}{2}(x^TQx+x^TQx)=x^TQx $.
+
+It proves that: $ x^T Q x = x^T S x $
+
+\begin{enumerate}[]
+\item[3.] \textbf{Prove the four properties in the left column of Table 1-1 in Kirk's book}
+\end{enumerate}
+
+To prove the properties of the linear system State Transition Matrix (STM) it is necessary to use the following representation of STM:
+$$ \varphi(t) = e^{At}$$
+\
+\begin{enumerate}[]
+\item[\textbf{a)}] $ \varphi(0) = I $
+\end{enumerate}
+\begin{eqnarray*}
+\begin{split}
+	\varphi(t) &= e^{At} = I+At+\frac{A^2t^2}{2\!}+\frac{A^3t^3}{3\!} + ...\\
+	\varphi(0) &= e^{A0} = I+A0+\frac{A^20^2}{2\!}+\frac{A^30^3}{3\!} + ...\\
+	&= I
+\end{split}
+\end{eqnarray*}
+
+\begin{enumerate}[]
+\item[\textbf{b)}] $ \varphi(t_2-t_1)\varphi(t_1-t_0) = \varphi(t_2-t_0) $
+\end{enumerate}
+
+Knowing that $$ \varphi(t_2-t_1) = e^{A \left( t_2-t_1 \right)} $$
+And $$ \varphi(t_1-t_0) = e^{A \left( t_1-t_0\right)} $$
+
+We have: 
+\begin{eqnarray*}
+\begin{split}
+	\varphi(t_2-t_1)\varphi(t_1-t_0) &= e^{A \left( t_2-t_1 \right)}e^{A \left( t_1-t_0 \right)} \\
+	&= e^{A \left( t_2-t_1+t_1-t_0 \right)} \\
+	&= e^{A \left( t_2-t_0 \right)} \\
+	&= \varphi(t_2-t_0)
+\end{split}
+\end{eqnarray*}
+
+\begin{enumerate}[]
+\item[\textbf{c)}] $ \varphi^{-1}(t_2-t_1) = \varphi(t_1-t_2) $
+\end{enumerate}
+\begin{eqnarray*}
+\begin{split}
+	\varphi^{-1}(t_2-t_1) &= \left( e^{A \left( t_2-t_1\right)}\right)^{-1} \\	
+	&= e^{-A \left( t_2-t_1\right)} \\
+	&= e^{A \left( t_1-t_2\right)} \\
+	&= \varphi(t_1-t_2)
+\end{split}
+\end{eqnarray*}
+
+\begin{enumerate}[]
+\item[\textbf{d)}] $ \frac{d}{dt}\varphi(t) = A\varphi(t) $
+\end{enumerate}
+\begin{eqnarray*}
+\begin{split}
+	\frac{d}{dt}\varphi(t) &= \frac{d}{dt}e^{At}\\
+	&= Ae^{At}\\
+	&= A\varphi(t)\\
+\end{split}
+\end{eqnarray*}
+
+\begin{enumerate}[]
+\item[4.] \textbf{Find the state transition matrices for the systems of Problem 1-12(e), (f), and (h) in Kirk's book}.
+\end{enumerate}
+
+\begin{enumerate}[]
+\item[\textbf{e)}] $ \frac{Y(s)}{U(s)} = \frac{5(s+2)}{s(s+1)} $
+\end{enumerate}
+\begin{eqnarray*}
+\begin{split}
+	\frac{Y(s)}{X(s)}\frac{X(s)}{U(s)} &= 5(s+2)\frac{1}{s(s+1)} \\
+\end{split}
+\end{eqnarray*}
+For:
+\begin{eqnarray*}
+	\frac{Y(s)}{X(s)} &= 5s(s+2)\\
+\end{eqnarray*}
+Then, $ y(t) = 5\ddot{x}(t)+10x(t) $
+
+For:
+\begin{eqnarray*}
+	\begin{split}
+	\frac{X(s)}{U(s)} &= \frac{1}{s^2}\\
+	U(s) &= s^2X(s) \\
+	\end{split}
+\end{eqnarray*}
+Then, $ u(t) = \ddot{x}(t)$
+
+Assuming the states variables as $x_1 = x(t)$ and $x_2 = \dot{x}(t)$ and $X = [x_1\:\:\:x_2]^T$ and $\dot{X} = [\dot{x}_1\:\:\:\dot{x}_2]^T$, it results in:
+\begin{eqnarray*}
+\begin{split}
+\dot{X} &= 
+\begin{bmatrix}
+0 & 1 \\
+0 & -1
+\end{bmatrix} X + u \\ Y &= 
+\begin{bmatrix}
+10 & 5
+\end{bmatrix} X
+\end{split}
+\end{eqnarray*}
+
+For $\varphi(t) = e^{At} $ and knowing that $e^{At} =Qe^{At}Q^{-1}$: 
+
+The eigenvalues of A is $\lambda_1 = 0 $ and $\lambda_2 = -1 $  therefore, the eingevectors can be:
+\begin{eqnarray*}
+Q = 
+\begin{bmatrix}
+0 & -1 \\
+0 & 1 \\
+\end{bmatrix}
+\end{eqnarray*}
+And $ Q^{-1} $ :
+\begin{eqnarray*}
+Q^{-1} = 
+\begin{bmatrix}
+1 & 1 \\
+0 & 1 \\
+\end{bmatrix}
+\end{eqnarray*}
+
+Therefore: 
+
+\begin{eqnarray*}
+\begin{split}
+\varphi(t) &= Qe^{At}Q^{-1} \\ &=
+\begin{bmatrix}
+0 & -1 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & e^{-t} \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1 \\
+0 & 1 \\
+\end{bmatrix}\\ &=
+\begin{bmatrix}
+1 & 1-e^{-t} \\
+0 & e^{-t} \\
+\end{bmatrix}
+\end{split}
+\end{eqnarray*}
+
+
+\begin{enumerate}[]
+\item[\textbf{f)}] $ \frac{Y(s)}{U(s)} = \frac{(s+1)(s+2)}{s^2} $
+\end{enumerate}
+\begin{eqnarray*}
+\begin{split}
+	\frac{Y(s)}{X(s)}\frac{X(s)}{U(s)} &= (s+1)(s+2)\frac{1}{s^2} \\
+\end{split}
+\end{eqnarray*}
+For:
+\begin{eqnarray*}
+	\begin{split}
+	\frac{Y(s)}{X(s)} &= (s+1)(s+2)\\
+	Y(s) &= (s+1)(s+2)X(s) \\
+	&= [s^2+3s+2]X(s)
+	\end{split}
+\end{eqnarray*}
+Then, $ y(t) = \ddot{x}(t) + 3\dot{x}(t) + 2x(t) $
+
+For:
+\begin{eqnarray*}
+	\begin{split}
+	\frac{X(s)}{U(s)} &= \frac{1}{s^2} \\
+	U(s) &= s^2X(s) \\
+	\end{split}
+\end{eqnarray*}
+Then, $ u(t) = \ddot{x}(t) $
+
+Assuming the states variables as $x_1 = x(t)$ and $x_2 = \dot{x}(t)$ and $X = [x_1\:\:\:x_2]^T$ and $\dot{X} = [\dot{x}_1\:\:\:\dot{x}_2]^T$, it results in:
+\begin{eqnarray*}
+\begin{split}
+\dot{X} &= 
+\begin{bmatrix}
+0 & 1 \\
+0 & 0
+\end{bmatrix} X + u \\ Y &= 
+\begin{bmatrix}
+2 & 3
+\end{bmatrix} X
+\end{split}
+\end{eqnarray*}
+
+For $\varphi(t) = \mathcal{L}^{-1} \left\lbrace \left[sI-A \right]^{-1} \right\rbrace $
+\begin{eqnarray*}
+\begin{split}
+\varphi(t) &= \mathcal{L}^{-1} \left\lbrace 
+\begin{bmatrix}
+s & 1 \\
+0 & s
+\end{bmatrix} ^{-1} \right\rbrace \\ &= \mathcal{L}^{-1} \left\lbrace 
+\begin{bmatrix}
+\frac{1}{s} & \frac{1}{s^2} \\
+0 & \frac{1}{s^2}
+\end{bmatrix} \right\rbrace
+\end{split}
+\end{eqnarray*}
+Therefore:
+$$ \varphi(t) = 
+\begin{bmatrix}
+1 & t \\
+0 & 1
+\end{bmatrix}
+$$
+
+\begin{enumerate}[]
+\item[\textbf{h)}] $ \frac{Y(s)}{U(s)} = \frac{4}{(s+1)(s+2)} $
+\end{enumerate}
+\begin{eqnarray*}
+\begin{split}
+	\frac{Y(s)}{X(s)}\frac{X(s)}{U(s)} &= 4\frac{1}{(s+1)(s+2)} \\
+\end{split}
+\end{eqnarray*}
+For:
+\begin{eqnarray*}
+	\frac{Y(s)}{X(s)} &= 4\\
+\end{eqnarray*}
+Then, $ y(t) = 4x(t) $
+
+For:
+\begin{eqnarray*}
+	\begin{split}
+	\frac{X(s)}{U(s)} &= \frac{1}{(s+1)(s+2)}\\
+	U(s) &= [s^2+3s+2]X(s) \\
+	\end{split}
+\end{eqnarray*}
+Then, $ u(t) = \ddot{x}(t) + 3\dot{x}(t) + 2x(t)$
+
+Assuming the states variables as $x_1 = x(t)$ and $x_2 = \dot{x}(t)$ and $X = [x_1\:\:\:x_2]^T$ and $\dot{X} = [\dot{x}_1\:\:\:\dot{x}_2]^T$, it results in:
+\begin{eqnarray*}
+\begin{split}
+\dot{X} &= 
+\begin{bmatrix}
+0 & 1 \\
+-2 & -3
+\end{bmatrix} X + u \\ Y &= 
+\begin{bmatrix}
+1 & 0
+\end{bmatrix} X
+\end{split}
+\end{eqnarray*}
+
+For $\varphi(t) = \mathcal{L}^{-1} \left\lbrace \left[sI-A \right]^{-1} \right\rbrace $
+\begin{eqnarray*}
+\begin{split}
+\varphi(t) &= \mathcal{L}^{-1} \left\lbrace 
+\begin{bmatrix}
+s & -1 \\
+2 & s+3
+\end{bmatrix} ^{-1} \right\rbrace \\ 
+&= \mathcal{L}^{-1} \left\lbrace 
+\begin{bmatrix}
+\frac{s+3}{s^2 + 3s + 2}  & \frac{1}{s^2 + 3s + 2} \\
+\frac{-2}{s^2 + 3s + 2} & \frac{s}{s^2 + 3s + 2}
+\end{bmatrix}
+\right\rbrace \\ &= 
+\left[\begin{array}{cc} 2\,{\mathrm{e}}^{-t}-{\mathrm{e}}^{-2\,t} & {\mathrm{e}}^{-t}-{\mathrm{e}}^{-2\,t}\\ 2\,{\mathrm{e}}^{-2\,t}-2\,{\mathrm{e}}^{-t} & 2\,{\mathrm{e}}^{-2\,t}-{\mathrm{e}}^{-t} \end{array}\right]
+\end{split}
+\end{eqnarray*}
+
+\end{document}

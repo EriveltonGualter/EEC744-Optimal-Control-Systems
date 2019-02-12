@@ -1,0 +1,74 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'plot1.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{427.5bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.05796675)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{plot1.pdf}}%
+    \put(0.12192982,0.71001348){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lb]{\smash{051015202530}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{plot1.pdf}}%
+    \put(0.0748538,0.76911991){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lb]{\smash{-0.10\\ 0.1\\ 0.2}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{plot1.pdf}}%
+    \put(0.69649123,0.93842752){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Continuous-Time}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{plot1.pdf}}%
+    \put(0.69649123,0.91083921){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Discrete-Time}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{plot1.pdf}}%
+    \put(0.12192982,0.33632927){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lb]{\smash{051015202530}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{plot1.pdf}}%
+    \put(0.0748538,0.3954357){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lb]{\smash{-0.10\\ 0.1\\ 0.2}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{plot1.pdf}}%
+    \put(0.69649123,0.56474331){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Continuous-Time}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{plot1.pdf}}%
+    \put(0.69649123,0.537155){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Discrete-Time}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{plot1.pdf}}%
+    \put(0.49279526,-0.00421099){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lb]{\smash{0.511.52}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{plot1.pdf}}%
+    \put(0.40712813,0.07271159){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lb]{\smash{-0.13\\ -0.129\\ -0.128\\ -0.127\\ -0.126\\ -0.125\\ -0.124\\ -0.123\\ -0.122\\ -0.121}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{plot1.pdf}}%
+  \end{picture}%
+\endgroup%
